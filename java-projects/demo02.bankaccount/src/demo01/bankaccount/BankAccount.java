@@ -33,7 +33,10 @@ public class BankAccount {
 		
 	}
 	
-	void withdraw(double amount, String confirmPassword) {
+	void withdraw() {
+		double amount=Input.readInt("Amount?");
+		String confirmPassword=Input.readString("Password?");
+		
 		if(amount<=0)
 			System.out.println("Invalid Amount");
 		else if (amount>balance)

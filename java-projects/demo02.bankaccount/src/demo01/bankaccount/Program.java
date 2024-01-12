@@ -13,11 +13,15 @@ public class Program {
 		//a1.creditInterest();	
 		a1.deposit(-5000); //balance shouldn't reduce
 		
-		a1.withdraw(50000, "p@ss");
-		a1.withdraw(10000,"wrong-password");
-		a1.withdraw(10000,"p@ss");
+//		a1.withdraw(50000, "p@ss");
+//		a1.withdraw(10000,"wrong-password");
+//		a1.withdraw(15000,"p@ss");
 		
-		System.out.println("Final Balance = "+a1.balance);				
+		a1.withdraw();
+		
+		//System.out.println("Final Balance = "+a1.balance);
+		
+		a1.show();
 		
 	}
 
