@@ -1,34 +1,36 @@
-package in.conceptarchitect.finance;
+package in.conceptarchitect.ui;
+
+import in.conceptarchitect.finance.BankAccount;
 
 public class Program {
 	
 	public static void main(String []args){
-		System.out.println("BankAccount V2 example");
-		BankAccount a1=new BankAccount(1,"Vivek","p@ss",20000,12);
-		//a1.balance=20000;
-		//a1.interestRate=12;
-		//a1.password="p@ss";
+		
+		BankAccount a1=new BankAccount( "Vivek", "p@ss", 25000);
+		
+		BankAccount a2=new BankAccount( "Sanjay", "p@ss2", 25000);
+		
+		System.out.println(a1.info());
+		System.out.println();
+		System.out.println(a2.info());
 		
 		
 		
-		tryDeposit(a1, 10000);
-		//a1.creditInterest();	
+		System.out.println("\n\nChanging the interst rate for a1");
 		
-		tryDeposit(a1, -5000);
+		//a1.setInterestRate(11);
 		
+		BankAccount.setInterestRate(11);
 		
-		//We can withdraw even if we don't know the password
-		//a1.password="new-password"; //we can change password
-		
-		tryWithdraw(a1, 10000, "new-password");
-		
+		System.out.println(a1.info());
+		System.out.println();
+		System.out.println(a2.info());
 		
 		
 		
 		
-		//System.out.println("Final Balance = "+a1.balance);
 		
-		a1.show();
+		
 		
 	}
 	

@@ -9,9 +9,15 @@ public class BankAccount {
 	private String password="";
 	
 	private double balance;
-	private double interestRate;
-	private boolean active=true;
 	
+	
+	
+	private double interestRate;
+	
+	
+	
+	
+	private boolean active=true;
 	
 	
 	public String getName() {
@@ -113,13 +119,23 @@ public class BankAccount {
 		}
 	}
 	
-	public void show() {
-		System.out.println("Account Number:"+accountNumber);
-		System.out.println("Name:"+name);
-		System.out.println("Balance:"+balance);
-		System.out.println("Inerest Rate:"+interestRate);
-		System.out.println("Password:"+password);
+//	public void show() {
+//		System.out.println("Account Number:"+accountNumber);
+//		System.out.println("Name:"+name);
+//		System.out.println("Balance:"+balance);
+//		System.out.println("Inerest Rate:"+interestRate);
+//		System.out.println("Password:"+password);
+//	}
+	
+	
+	public String info()
+	{
+		return "Account # "+ accountNumber+
+			   "\tName="+name+
+			   "\tBalance="+balance+
+			   "\tInterest Rate="+interestRate;
 	}
+	
 	
 	public void creditInterest()
 	{

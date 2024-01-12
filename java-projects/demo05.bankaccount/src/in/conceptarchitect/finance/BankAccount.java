@@ -9,9 +9,34 @@ public class BankAccount {
 	private String password="";
 	
 	private double balance;
-	private double interestRate;
-	private boolean active=true;
 	
+	
+	
+	private static double interestRate=12;
+	
+	private static int lastId;
+	static {
+		lastId=0; //we can fetch it from database
+	}
+	
+	
+	
+	public BankAccount( String name, String password, double amount)
+	{
+		this.accountNumber=++lastId;
+		this.name=name;
+		//this.password=password;
+		setPassword(password);
+		
+		this.balance=amount; //this is not required, but can we used.		
+		
+		
+	}
+	
+	
+	
+	
+	private boolean active=true;
 	
 	
 	public String getName() {
@@ -60,9 +85,9 @@ public class BankAccount {
 		return balance;
 	}
 
-	public double getInterestRate() { return interestRate;}
+	public static double getInterestRate() { return interestRate;}
 	
-	public void setInterestRate(double rate) { 
+	public static void setInterestRate(double rate) { 
 	
 		double delta = interestRate/10;
 		
@@ -73,19 +98,7 @@ public class BankAccount {
 	}
 	
 	
-	public BankAccount(int accountNumber, String name, String password, double amount, double rate)
-	{
-		this.accountNumber=accountNumber;
-		this.name=name;
-		//this.password=password;
-		setPassword(password);
-		
-		this.balance=amount; //this is not required, but can we used.
-		
-		interestRate=rate; //this is no required and hence not used.
-		
-		
-	}
+	
 	
 	public boolean deposit(double amount) {
 		if(amount>0){
@@ -113,13 +126,23 @@ public class BankAccount {
 		}
 	}
 	
-	public void show() {
-		System.out.println("Account Number:"+accountNumber);
-		System.out.println("Name:"+name);
-		System.out.println("Balance:"+balance);
-		System.out.println("Inerest Rate:"+interestRate);
-		System.out.println("Password:"+password);
+//	public void show() {
+//		System.out.println("Account Number:"+accountNumber);
+//		System.out.println("Name:"+name);
+//		System.out.println("Balance:"+balance);
+//		System.out.println("Inerest Rate:"+interestRate);
+//		System.out.println("Password:"+password);
+//	}
+	
+	
+	public String info()
+	{
+		return "Account # "+ accountNumber+
+			   "\tName="+name+
+			   "\tBalance="+balance+
+			   "\tInterest Rate="+interestRate;
 	}
+	
 	
 	public void creditInterest()
 	{
