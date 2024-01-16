@@ -7,6 +7,10 @@ public class Animal {
 		this.name=name;
 	}
 	
+	
+	
+	
+	
 	public Animal() {
 		this.name="";
 		System.out.println("Animal default constructor");
